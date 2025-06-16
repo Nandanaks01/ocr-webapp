@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, send_file
 import os
 from ocr import mileage, MRO  # Add mro_ocr if needed
 
-App = Flask(__name__)
+app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
 OUTPUT_FOLDER = 'outputs'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -31,4 +31,4 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    App.run(debug=True)
+    app.run(debug=True)
