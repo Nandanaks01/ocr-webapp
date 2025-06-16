@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OCR to Excel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+            background-color:  #513C3C;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        form {
+            background: #D3D0D0;
+            padding: 40px;
+            display: inline-block;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        select, input[type="file"], input[type="submit"] {
+            margin: 10px 0;
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4A5C4E;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #25865C;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Image</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="doc_type">Choose document type:</label><br>
+        <select name="doc_type" required>
+            <option value="mileage">Mileage Logs</option>
+            <option value="MRO">MRO</option>
+        </select><br><br>
+
+        <label for="image">Upload image file:</label><br>
+        <input type="file" name="image" accept="image/*" required><br><br>
+
+        <input type="submit" value="Convert to Excel">
+    </form>
+</body>
+</html>
