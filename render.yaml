@@ -3,7 +3,7 @@ services:
     name: ocr-webapp
     env: python
     buildCommand: ""
-    startCommand: "gunicorn app:App"
+    startCommand: "gunicorn app:app"
     plan: free
     region: ohio
 
