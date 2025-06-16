@@ -2,13 +2,13 @@ from flask import Flask, render_template, request, send_file
 import os
 from ocr import mileage, MRO  # Add mro_ocr if needed
 
-app = Flask(__name__)
+App = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
 OUTPUT_FOLDER = 'outputs'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-@app.route("/", methods=["GET", "POST"])
+@App.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         doc_type = request.form.get("doc_type")
@@ -31,4 +31,4 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    App.run(debug=True)
