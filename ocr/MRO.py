@@ -6,13 +6,13 @@ from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
 import os
 
-# Replace with your Azure credentials
+
 subscription_key = "CmVkKxEucLIUkS3xa8lAOT3I2dXCW9IlzDvVnDBVNhN3FAY616U6JQQJ99BFACYeBjFXJ3w3AAAFACOGmwr5"
 endpoint = "https://ocr-table-reader.cognitiveservices.azure.com/"
 
 client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
-def extract_table(read_result, min_columns=12, row_height=24):
+def extract_table(read_result, min_columns=10, row_height=24):
     all_words = []
     for page in read_result.analyze_result.read_results:
         for line in page.lines:
