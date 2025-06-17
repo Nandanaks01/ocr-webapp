@@ -12,7 +12,7 @@ endpoint = "https://ocr-table-reader.cognitiveservices.azure.com/"
 
 client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
-def extract_table(read_result, min_columns=1, row_height=45):
+def extract_table(read_result, min_columns=1, row_height=55):
     all_words = []
     for page in read_result.analyze_result.read_results:
         for line in page.lines:
